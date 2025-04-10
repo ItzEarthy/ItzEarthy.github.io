@@ -1,0 +1,184 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #1E1E1E; /* Desktop background color */
+    color: #000;
+    overflow: hidden;
+    background-image: url('https://via.placeholder.com/1920x1080'); /* Optional desktop wallpaper */
+    background-size: cover;
+    background-position: center;
+}
+
+.window {
+    background-color: #fff;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: absolute; /* Allow free placement on the screen */
+    width: fit-content;
+    max-width: 800px;
+}
+
+.window-nav {
+    margin: 10px;
+    background-color: #fff;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 99%;
+}
+
+.window-nav header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+}
+
+.window-contact {
+    margin: 10px;
+    background-color: #fff;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: fit-content;
+    max-width: 49%;
+    max-height: 90%;
+}
+.window-info {
+    margin: 10px;
+    background-color: #fff;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: fit-content;
+    max-width: 49%;
+    
+}
+
+
+.window-contact header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+}
+
+.window-info header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background-color: #fff;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+}
+
+
+.window-header {
+    background-color: #0078D7;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.window-header .controls {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.window-header .controls div {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #FF5F57; /* Close button */
+    cursor: pointer;
+}
+
+.window-header .controls div:nth-child(2) {
+    background-color: #FFBD2E; /* Minimize button */
+}
+
+.window-header .controls div:nth-child(3) {
+    background-color: #28C940; /* Maximize button */
+}
+
+.window-content {
+    /*max-width: fit-content;*/
+}
+
+.explorer {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    width: fit-content;
+    min-height: 300px;
+    padding: 1rem;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
+}
+
+.explorer-header {
+    background-color: #E0E0E0;
+    padding: 0.5rem 1rem;
+    font-weight: bold;
+    border-bottom: 1px solid #ccc;
+}
+
+.explorer-content {
+    padding: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.file,
+.folder {
+    width: 120px;
+    text-align: center;
+    user-select: none;
+}
+
+.file-icon,
+.folder-icon {
+    font-size: 2.5rem;
+}
+
+.file-label,
+.folder-label {
+    margin-top: 0.5rem;
+    word-break: break-word;
+    color: #C1121F;
+}
+
+.terminal {
+    display: none;
+    background: black;
+    color: #33FF33;
+    padding: 1rem;
+    width: fit-content;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: monospace;
+}
+
+.terminal input {
+    background: transparent;
+    border: none;
+    color: #33FF33;
+    font-family: monospace;
+    width: 100%;
+    outline: none;
+    font-size: 1rem;
+}

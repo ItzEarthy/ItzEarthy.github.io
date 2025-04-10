@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>public class Me {}</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+        * {
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        /*body {
+            margin: 0;
+            font-family: 'JetBrains Mono', monospace;
+            background-color: var(--light-bg);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }*/
+        main{
+            overflow: scroll;
+        }
+
+
+        nav a {
+            margin: 0 1rem;
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: var(--blue);
+        }
+
+        .container {
+            max-width: 100%;
+            max-height: 90%;
+            margin: auto;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            align-items: start;
+        }
+
+        .row {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: #780000;
+        }
+
+        .hero {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .hero .tagline {
+            font-size: 1.25rem;
+            color: var(--blue);
+            margin-top: 0.5rem;
+        }
+
+        .section {
+            margin-bottom: 4rem;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .card {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border: 1px solid #e0e0e0;
+            border-radius: 12px;
+            transition: 0.3s ease;
+        }
+
+        .card:hover {
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .skill-tag {
+            background: #003049;
+            color: white;
+            padding: 0.2rem 0.6rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.85rem;
+        }
+
+        .skill-tag:hover {
+            background: #C1121F;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .resume-btn {
+            display: inline-block;
+            background: var(--red);
+            color: white;
+            padding: 0.5rem 1rem;
+            margin-top: 1rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .resume-btn:hover {
+            background: #a60e19;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 4rem;
+            font-size: 0.9rem;
+            color: #999;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <div class="window-nav">
+        <div class="window-header">
+            <span><img src="icons\Windows_11_executable.svg.png" alt="exe icon"
+                    style="width: 16px; height: 16px; vertical-align: middle; margin-bottom: 5px;"> Navbar.exe</span>
+            <div class="controls">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+        <div class="window-content">
+            <header>
+                <div><strong>public class Me {}</strong></div>
+                <nav>
+                    <a href="#about">About</a>
+                    <a href="#experience">Experience</a>
+                    <a href="#education">Education</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#skills">Skills</a>
+                    <a href="#involvement">Involvement</a>
+                    <a href="#contact">Contact</a>
+                </nav>
+            </header>
+        </div>
+    </div>
+
+    <main>
+        <div class="container">
+            <div class="window-contact">
+                <div class="window-header">
+                    <span><img src="icons\Windows_11_executable.svg.png" alt="exe icon"
+                            style="width: 16px; height: 16px; vertical-align: middle; margin-bottom: 5px;">
+                        Navbar.exe</span>
+                    <div class="controls">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                </div>
+                <div class="window-content">
+                    <header>
+                        <section class="hero">
+                            <h1>Hi, my name is</h1>
+                            <h2>TYLER KONEY</h2>
+                            <p class="tagline">"Where code meets curiosity"</p>
+                            <a class="resume-btn" href="Resume_Koney_11_13_24.docx.pdf" download>Download Resume</a>
+                        </section>
+                    </header>
+                </div>
+            </div>
+            <div class="window-info">
+                <div class="window-header">
+                    <span><img src="icons\Windows_11_executable.svg.png" alt="exe icon"
+                            style="width: 16px; height: 16px; vertical-align: middle; margin-bottom: 5px;">
+                        Navbar.exe</span>
+                    <div class="controls">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                </div>
+                <div class="window-content" style="overflow-y: auto;">
+                    <header>
+                        <section id="about" class="section">
+                            <h2>About Me</h2>
+                            <p>I’m a Computer Science major with a Cybersecurity minor who’s passionate about building
+                                secure
+                                systems
+                                and creative digital solutions—from backend logic to interactive front-end experiences.
+                            </p>
+                        </section>
+                        <section id="experience" class="section">
+                            <h2>Experience</h2>
+                            <div class="card">
+                                <h3>Fortnite Creative Developer – Epic Games</h3>
+                                <p>Created 37 high-impact environments with Verse code, played by over 10M+ users
+                                    worldwide.</p>
+                                <div class="skills"><span class="skill-tag">Verse</span><span class="skill-tag">Game
+                                        Design</span><span class="skill-tag">UEFN</span></div>
+                            </div>
+                            <div class="card">
+                                <h3>Leadership – Chick-Fil-A</h3>
+                                <p>Led front-of-house teams, enforced security protocols, handled customer interactions.
+                                </p>
+                                <div class="skills"><span class="skill-tag">Leadership</span><span
+                                        class="skill-tag">Security</span>
+                                </div>
+                            </div>
+                        </section>
+                        <section id="education" class="section">
+                            <h2>Education</h2>
+                            <div class="card">
+                                <h3>University of Wisconsin - Whitewater</h3>
+                                <p>B.S. in Computer Science, Minor in Cybersecurity<br />Expected Graduation: Dec 2026
+                                </p>
+                                <div class="skills"><span class="skill-tag">Java</span><span
+                                        class="skill-tag">C++</span><span class="skill-tag">Networking</span></div>
+                            </div>
+                        </section>
+                        <section id="projects" class="section">
+                            <h2>Projects</h2>
+                            <div class="project-grid">
+                                <div class="card">
+                                    <h3>Banking System (C++)</h3>
+                                    <p>A console-based system for login, deposit, withdrawal, transfer and account
+                                        deletion.
+                                        File
+                                        I/O
+                                        backend.</p>
+                                    <div class="skills"><span class="skill-tag">C++</span><span class="skill-tag">File
+                                            I/O</span><span class="skill-tag">Security</span></div>
+                                </div>
+                            </div>
+                        </section>
+                        <section id="skills" class="section">
+                            <h2>Skills</h2>
+                            <div class="skills">
+                                <span class="skill-tag">Java</span><span class="skill-tag">C++</span><span
+                                    class="skill-tag">HTML/CSS</span><span class="skill-tag">Networking</span><span
+                                    class="skill-tag">Git</span><span class="skill-tag">Azure</span><span
+                                    class="skill-tag">Verse</span>
+                            </div>
+                        </section>
+                        <section id="involvement" class="section">
+                            <h2>Involvement & Awards</h2>
+                            <ul>
+                                <li>Co-Founder of The Billiards Club</li>
+                                <li>ISACA, ACM, Cyber Hawks Member</li>
+                                <li>Eagle Scout, Chick-fil-A Scholarship Recipient</li>
+                            </ul>
+                        </section>
+                    </header>
+                </div>
+            </div>
+
+        </div>
+        </div>
+
+        <footer>
+            <p>Designed with ❤️ and curiosity</p>
+        </footer>
+    </main>
+    <script>
+        const tags = document.querySelectorAll('.skill-tag');
+        tags.forEach(tag => {
+            tag.addEventListener('click', () => {
+                const skill = tag.textContent;
+                document.querySelectorAll('.card').forEach(card => {
+                    if (card.innerHTML.includes(skill)) {
+                        card.classList.remove('hidden');
+                    } else {
+                        card.classList.add('hidden');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

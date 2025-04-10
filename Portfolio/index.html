@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>public class Me {}</title>
+    <link rel="stylesheet" href="index-styles.css" />
+</head>
+
+<body>
+    <!-- Explorer Window -->
+    <div class="window" id="explorerWindow">
+        <div class="window-header">
+            <span>📁 Encrypted Filesystem</span>
+            <div class="controls">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+        <div class="window-content">
+            <div class="explorer" id="explorer">
+                <div class="explorer-header">📁 Encrypted Filesystem</div>
+                <div class="explorer-content">
+                    <div class="folder">
+                        <div class="folder-icon">📁</div>
+                        <div class="folder-label">U2FsdGVkX19ExampleEncryptedFolder1</div>
+                    </div>
+                    <div class="file">
+                        <div class="file-icon">📄</div>
+                        <div class="file-label">U2FsdGVkX19AnotherEncryptedFile</div>
+                    </div>
+                    <div class="folder">
+                        <div class="folder-icon">📁</div>
+                        <div class="folder-label">U2FsdGVkX19HiddenSecrets</div>
+                    </div>
+                    <div class="file">
+                        <div class="file-icon">📄</div>
+                        <div class="file-label">U2FsdGVkX19ProjectListEncrypted</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Terminal Window -->
+    <div class="window" id="terminalWindow" style="display: none;">
+        <div class="window-header">
+            <span>💻 Terminal</span>
+            <div class="controls">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+        <div class="window-content">
+            <div class="terminal" id="terminal">
+                <div>> Enter decryption password:</div>
+                <input type="text" id="passwordInput" autofocus />
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Function to randomly position a window while keeping it within the screen
+        function randomizeWindowPosition(windowId) {
+            const windowElement = document.getElementById(windowId);
+            const viewportWidth = window.innerWidth;
+            const viewportHeight = window.innerHeight;
+
+            // Ensure the window stays within the screen boundaries
+            const maxX = viewportWidth - windowElement.offsetWidth;
+            const maxY = viewportHeight - windowElement.offsetHeight;
+
+            const randomX = Math.floor(Math.random() * maxX);
+            const randomY = Math.floor(Math.random() * maxY);
+
+            windowElement.style.left = `${randomX}px`;
+            windowElement.style.top = `${randomY}px`;
+        }
+
+        // Randomize positions of the windows on page load
+        window.onload = () => {
+            randomizeWindowPosition('explorerWindow');
+            randomizeWindowPosition('terminalWindow');
+        };
+
+        setTimeout(() => {
+            console.log('Showing terminal...');
+            document.getElementById('terminalWindow').style.display = 'block';
+            document.getElementById('terminal').style.display = 'block';
+        }, 2000);
+
+        document.getElementById('passwordInput').addEventListener('keydown', function (e) {
+            if (e.key === 'Enter') {
+                if (e.target.value === 'password') {
+                    const messages = [
+                        '> Decryption key accepted.',
+                        '> Initializing...',
+                        '> Mounting file system...',
+                        '> Reading bytecode...',
+                        '> Verifying user class...',
+                        '> Decrypting assets...',
+                        '> Access granted.'
+                    ];
+
+                    const terminal = document.getElementById('terminal');
+                    terminal.innerHTML = ''; // Clear previous content
+
+                    messages.forEach((message, index) => {
+                        setTimeout(() => {
+                            terminal.innerHTML += `${message}<br>`;
+                        }, index * 500); // Show each message after 0.5 seconds
+                    });
+
+                    setTimeout(() => {
+                        window.location.href = 'decrypted.html'; // Redirect to the new page
+                    }, 3000);
+                } else {
+                    document.getElementById('terminal').innerHTML += '\n> Access denied. Try again.';
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
