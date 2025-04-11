@@ -20,8 +20,9 @@
             line-height: 1.6;
         }*/
         main{
-            overflow: scroll;
+            
         }
+
 
         nav a {
             margin: 0 1rem;
@@ -130,7 +131,7 @@
 
         footer {
             text-align: center;
-            margin-top: 4rem;
+            margin-top: auto;
             font-size: 0.9rem;
             color: #999;
         }
@@ -170,9 +171,7 @@
         <div class="container">
             <div class="window-contact">
                 <div class="window-header">
-                    <span><img src="icons\Windows_11_executable.svg.png" alt="exe icon"
-                            style="width: 16px; height: 16px; vertical-align: middle; margin-bottom: 5px;">
-                        Navbar.exe</span>
+                    <span>📰 Contact</span>
                     <div class="controls">
                         <div></div>
                         <div></div>
@@ -201,7 +200,7 @@
                         <div></div>
                     </div>
                 </div>
-                <div class="window-content" style="overflow-y: auto;">
+                <div class="window-content">
                     <header>
                         <section id="about" class="section">
                             <h2>About Me</h2>
@@ -271,19 +270,10 @@
                                 <li>Eagle Scout, Chick-fil-A Scholarship Recipient</li>
                             </ul>
                         </section>
-                        <section id="barcode-scanner" class="section">
-                            <h2>Barcode Scanner</h2>
-                            <button id="start-scan">Start Scanning</button>
-                            <div id="scanner-container" style="position: relative; width: 100%; max-width: 400px; margin-top: 1rem;">
-                                <video id="scanner-video" style="width: 100%; display: none;"></video>
-                            </div>
-                            <p id="scan-result" style="margin-top: 1rem; font-weight: bold;"></p>
-                        </section>
                     </header>
                 </div>
             </div>
 
-        </div>
         </div>
 
         <footer>
@@ -304,43 +294,7 @@
                 });
             });
         });
-
-        const startScanButton = document.getElementById('start-scan');
-        const scannerContainer = document.getElementById('scanner-container');
-        const scannerVideo = document.getElementById('scanner-video');
-        const scanResult = document.getElementById('scan-result');
-
-        startScanButton.addEventListener('click', () => {
-            Quagga.init({
-                inputStream: {
-                    name: "Live",
-                    type: "LiveStream",
-                    target: scannerContainer,
-                    constraints: {
-                        facingMode: "environment" // Use the back camera
-                    }
-                },
-                decoder: {
-                    readers: ["code_128_reader"] // Add more readers if needed
-                }
-            }, (err) => {
-                if (err) {
-                    console.error(err);
-                    alert("Error initializing barcode scanner.");
-                    return;
-                }
-                Quagga.start();
-                scannerVideo.style.display = "block";
-            });
-
-            Quagga.onDetected((data) => {
-                scanResult.textContent = `Scanned Code: ${data.codeResult.code}`;
-                Quagga.stop();
-                scannerVideo.style.display = "none";
-            });
-        });
     </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/quagga/0.12.1/quagga.min.js"></script>
 </body>
 
 </html>
